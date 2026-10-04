@@ -1,0 +1,181 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#btn-soda { background-color: #e67e22; color: white; }
+#btn-mg { background-color: #27ae60; color: white; }
+#btn-reset { background-color: #7f8c8d; color: white; }
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.simulation-area {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.organ-container {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fafafa;
+    overflow: hidden;
+}
+
+#stomach-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    transition: filter 0.8s ease, transform 0.5s ease;
+}
+
+/* მოწითალო ელფერი გულძმარვისას */
+#stomach-img.inflamed {
+    filter: drop-shadow(0px 0px 15px rgba(255, 0, 0, 0.8)) sepia(0.3) hue-rotate(-30deg);
+}
+
+/* ნორმალური მდგომარეობა */
+#stomach-img.normal {
+    filter: drop-shadow(0px 0px 5px rgba(0, 255, 0, 0.3));
+}
+
+/* შებერილობის ეფექტი სოდის დროს */
+#stomach-img.bloated {
+    transform: scale(1.08);
+    filter: drop-shadow(0px 0px 8px rgba(230, 126, 34, 0.6));
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+}
+
+.badge.danger { background-color: #e74c3c; color: white; }
+.badge.warning { background-color: #e67e22; color: white; }
+.badge.success { background-color: #2ecc71; color: white; }
+
+/* ნახშირორჟანგის ($CO_2$) ბუშტუკების ანიმაცია */
+.bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #bdc3c7;
+    border-radius: 50%;
+    animation: rise 2s infinite ease-in;
+}
+
+@keyframes rise {
+    0% {
+        bottom: 120px;
+        opacity: 1;
+        transform: translateX(0) scale(0.5);
+    }
+    50% {
+        transform: translateX(10px) scale(1.1);
+    }
+    100% {
+        bottom: 300px;
+        opacity: 0;
+        transform: translateX(-10px) scale(1.5);
+    }
+}
+
+.info-panel {
+    flex: 1;
+    min-width: 280px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #3498db;
+}
+
+.formula-box {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    line-height: 1.5;
+}
+
+.explanation {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.comparison-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.comparison-table th, .comparison-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.comparison-table th {
+    background-color: #f2f2f2;
+    color: #2c3e50;
+}

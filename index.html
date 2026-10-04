@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>კუჭის მჟავიანობის ნეიტრალიზაციის ცდა</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🧪 კუჭის მჟავიანობის ნეიტრალიზაციის სიმულაცია</h1>
+        
+        <div class="buttons-container">
+            <button id="btn-soda" onclick="runExperiment('soda')">🥛 1. სოდიანი წყლის მიღება (NaHCO<sub>3</sub>)</button>
+            <button id="btn-mg" onclick="runExperiment('mg')">💊 2. მაგნიუმის ჰიდროქსიდის მიღება (Mg(OH)<sub>2</sub>)</button>
+            <button id="btn-reset" onclick="resetExperiment()">🔄 საწყის მდგომარეობაში დაბრუნება</button>
+        </div>
+
+        <div class="simulation-area">
+            <!-- კუჭისა და საჭმლის მომნელებელი სისტემის ვიზუალიზაცია -->
+            <div class="organ-container">
+                <img src="st.png" alt="საჭმლის მომნელებელი სისტემა" id="stomach-img" class="inflamed">
+                <div id="status-badge" class="badge danger">🔥 გულძმარვა (HCl-ის მაღალი დონე)</div>
+                <div id="bubbles-container"></div>
+            </div>
+
+            <!-- ქიმიური რეაქციისა და ინფორმაციის პანელი -->
+            <div class="info-panel">
+                <h3>ქიმიური პროცესი და რეაქციის ტოლობა</h3>
+                <div id="formula-box" class="formula-box">
+                    <strong>საწყისი მდგომარეობა:</strong><br>
+                    კუჭში არის ჭარბი მარილმჟავა (HCl), pH &lt; 7
+                </div>
+                
+                <div id="explanation" class="explanation">
+                    აირჩიეთ ერთ-ერთი ცდა ზემოთ მდებარე ღილაკებით, რათა დააკვირდეთ რეაქციასა და შედეგებს.
+                </div>
+            </div>
+        </div>
+
+        <!-- შედარების სექცია -->
+        <div class="comparison-section" id="comparison-section" style="display: none;">
+            <h3>⚖️ ორგანიზმზე მოქმედების შედარება</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>მახასიათებელი</th>
+                        <th>საჭმლის სოდა (NaHCO<sub>3</sub>)</th>
+                        <th>მაგნიუმის ჰიდროქსიდი (Mg(OH)<sub>2</sub>)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>რეაქციის ტოლობა</strong></td>
+                        <td>NaHCO<sub>3</sub> + HCl ➔ NaCl + H<sub>2</sub>O + CO<sub>2</sub>↑</td>
+                        <td>Mg(OH)<sub>2</sub> + 2HCl ➔ MgCl<sub>2</sub> + 2H<sub>2</sub>O</td>
+                    </tr>
+                    <tr>
+                        <td><strong>აირის (CO<sub>2</sub>) გამოყოფა</strong></td>
+                        <td>❌ დიახ (იწვევს შებერილობას)</td>
+                        <td>✅ არა (აირი არ წარმოიქმნება)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>მოქმედების ხასიათი</strong></td>
+                        <td>სწრაფი, მაგრამ ხანმოკლე (შესაძლოა „რიკოშეტის ეფექტი“)</td>
+                        <td>რბილი, ხანგრძლივი და უსაფრთხო ნეიტრალიზაცია</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
